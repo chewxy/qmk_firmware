@@ -128,6 +128,12 @@ __attribute__((weak)) void unicode_input_finish(void) {
         case UC_WINC:
             tap_code(KC_ENTER);
             break;
+	case UC_EMACS:
+	    // The usual way to type unicode in emacs is C-x-8 <RET> then the unicode number in hex
+	    tap_code16(LCTL(KC_X));
+            tap_code16(KC_8);
+            tap_code16(KC_ENTER);
+            break;
     }
 
     set_mods(unicode_saved_mods);  // Reregister previously set mods
@@ -150,6 +156,9 @@ __attribute__((weak)) void unicode_input_cancel(void) {
         case UC_WIN:
             unregister_code(KC_LALT);
             break;
+	case UC_EMACS:
+	    tap_code16(KC_ENTER);
+	    break;
     }
 
     set_mods(unicode_saved_mods);  // Reregister previously set mods

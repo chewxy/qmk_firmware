@@ -64,6 +64,7 @@ enum unicode_input_modes {
     UC_WIN,    // Windows using EnableHexNumpad
     UC_BSD,    // BSD (not implemented)
     UC_WINC,   // Windows using WinCompose (https://github.com/samhocevar/wincompose)
+    UC_EMACS,  // Emacs is an operating system in search of a good text editor
     UC__COUNT  // Number of available input modes (always leave at the end)
 };
 
@@ -82,7 +83,8 @@ void    set_unicode_input_mode(uint8_t mode);
 void    cycle_unicode_input_mode(int8_t offset);
 void    persist_unicode_input_mode(void);
 
-void unicode_input_start(void);
+void unicode_input_start
+(void);
 void unicode_input_finish(void);
 void unicode_input_cancel(void);
 

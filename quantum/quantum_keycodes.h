@@ -471,6 +471,7 @@ enum quantum_keycodes {
     UNICODE_MODE_WIN,
     UNICODE_MODE_BSD,
     UNICODE_MODE_WINC,
+    UNICODE_MODE_EMACS,
 
     HPT_ON,
     HPT_OFF,
@@ -873,6 +874,7 @@ enum quantum_keycodes {
 #define UC_M_WI UNICODE_MODE_WIN
 #define UC_M_BS UNICODE_MODE_BSD
 #define UC_M_WC UNICODE_MODE_WINC
+#define UC_M_EM UNICODE_MODE_EMACS
 
 #ifdef SWAP_HANDS_ENABLE
 #    define SH_T(kc) (QK_SWAP_HANDS | (kc))
